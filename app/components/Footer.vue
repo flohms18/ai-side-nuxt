@@ -1,5 +1,31 @@
+<script setup lang="ts">
+
+import type { NavigationMenuItem } from '@nuxt/ui'
+
+
+const route = useRoute()
+
+const items = computed<NavigationMenuItem[]>(() => [
+    {
+        label : 'About',
+        to : 'about',
+        active : route.path.startsWith('/about')
+    }
+])
+
+</script>
+
+
 <template>
-    <div>
-        <h1>Hello, this is my footer component</h1>
-    </div>
+    <UFooter>
+        <template #left>
+            Hello There
+        </template>
+
+        <UNavigationMenu :items="items" variant="link" />
+
+        <template #right>
+            James Bond
+        </template>
+    </UFooter>
     </template>
