@@ -1,5 +1,31 @@
+<script setup lang="ts">
+
+import type { NavigationMenuItem } from '@nuxt/ui';
+
+const route = useRoute()
+
+const items = computed<NavigationMenuItem[]>(() => [
+    {
+        label : 'Docs',
+        to : 'about',
+        active : route.path.startsWith('/about')
+    }
+])
+
+
+</script>
+
+
+
+
 <template>
-    <div>
-        <h1>Hello, this is my header component</h1>
-    </div>
+    <UHeader>
+        <template #title >
+
+        </template>
+
+        <template #right>
+            <UNavigationMenu :items="items" />
+        </template>
+    </UHeader>
     </template>
