@@ -6,7 +6,7 @@ const route = useRoute()
 
 const items = computed<NavigationMenuItem[]>(() => [
     {
-        label : 'Docs',
+        label : 'About',
         to : 'about',
         active : route.path.startsWith('/about')
     }
@@ -21,7 +21,7 @@ const items = computed<NavigationMenuItem[]>(() => [
 <template>
     <UHeader>
         <template #title >
-
+            
         </template>
 
         <template #right>
